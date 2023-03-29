@@ -4,11 +4,15 @@
 
 {% block body %}
     <section class="profil">
-
         <div>
             <h4>{{ Utilisateur.getUtilisateurPseudo }}</h4>
             <h4>{{ Utilisateur.getUtilisateurEmail }}</h4>
             <img src="{{ asset('media/') }}{{ Utilisateur.getAvatar }}">
+        </div>
+    </section>
+    <section>
+        <div>
+            <a href=""></a>
         </div>
     </section>
 {% endblock %}
