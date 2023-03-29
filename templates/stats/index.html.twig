@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Statistics{% endblock %}
+
+{#TODO : Personnaliser le title et faire la page#}
+{% block body %}
+    <h1>Statistiques</h1>
+
+    <h2>Nombres de parties perdues</h2>
+    {{ dump(stats.partiesPerdues) }}
+
+    <h2>Nombres de parties gagnées</h2>
+    {{ dump(stats.partiesGagnees) }}
+
+    <h2>Nombres de parties jouées</h2>
+    {{ dump(stats.partiesJouees) }}
+
+    <h2>Adversaire</h2>
+    {% for i in vs %}
+        {{ dump(i) }}
+    {% endfor %}
+{% endblock %}
