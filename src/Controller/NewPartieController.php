@@ -27,7 +27,7 @@ class NewPartieController extends AbstractController
 
         $joueur1 = $joueur2 = $utilisateurRepository->find(1);
         $partie = new Partie();
-        $partie->setPartieJoueur1($joueur1);
+        $partie->setPartieJoueur1($this->getUser());
 
         $joueur2 = $utilisateurRepository->find(2);
         $partie->setPartieJoueur1($joueur2);
