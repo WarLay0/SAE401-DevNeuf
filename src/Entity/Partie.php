@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PartieRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PartieRepository::class)]
@@ -33,6 +35,14 @@ class Partie
 
     #[ORM\Column(length: 255)]
     private ?string $partieVictoire = null;
+
+    #[ORM\OneToMany(mappedBy: 'partie', targetEntity: MotPartie::class)]
+    private Collection $motParties;
+
+    public function __construct()
+    {
+        $this->motParties = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -119,6 +129,36 @@ class Partie
     public function setPartieVictoire(string $partieVictoire): self
     {
         $this->partieVictoire = $partieVictoire;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MotPartie>
+     */
+    public function getMotParties(): Collection
+    {
+        return $this->motParties;
+    }
+
+    public function addMotParty(MotPartie $motParty): self
+    {
+        if (!$this->motParties->contains($motParty)) {
+            $this->motParties->add($motParty);
+            $motParty->setPartie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMotParty(MotPartie $motParty): self
+    {
+        if ($this->motParties->removeElement($motParty)) {
+            // set the owning side to null (unless already changed)
+            if ($motParty->getPartie() === $this) {
+                $motParty->setPartie(null);
+            }
+        }
 
         return $this;
     }

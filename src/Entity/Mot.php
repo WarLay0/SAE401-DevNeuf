@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\MotRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MotRepository::class)]
@@ -20,6 +22,14 @@ class Mot
 
     #[ORM\Column(length: 255)]
     private ?string $motEn = null;
+
+    #[ORM\OneToMany(mappedBy: 'mot', targetEntity: MotPartie::class)]
+    private Collection $motParties;
+
+    public function __construct()
+    {
+        $this->motParties = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -46,6 +56,36 @@ class Mot
     public function setMotEn(string $motEn): self
     {
         $this->motEn = $motEn;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MotPartie>
+     */
+    public function getMotParties(): Collection
+    {
+        return $this->motParties;
+    }
+
+    public function addMotParty(MotPartie $motParty): self
+    {
+        if (!$this->motParties->contains($motParty)) {
+            $this->motParties->add($motParty);
+            $motParty->setMot($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMotParty(MotPartie $motParty): self
+    {
+        if ($this->motParties->removeElement($motParty)) {
+            // set the owning side to null (unless already changed)
+            if ($motParty->getMot() === $this) {
+                $motParty->setMot(null);
+            }
+        }
 
         return $this;
     }

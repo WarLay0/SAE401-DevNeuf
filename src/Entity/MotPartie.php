@@ -28,6 +28,15 @@ class MotPartie
     #[ORM\Column(length: 255)]
     private ?string $mpJeton2 = null;
 
+    #[ORM\ManyToOne(inversedBy: 'motParties')]
+    private ?Partie $partie = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $MpTrouve = null;
+
+    #[ORM\ManyToOne(inversedBy: 'motParties')]
+    private ?Mot $mot = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +98,42 @@ class MotPartie
     public function setMpJeton2(string $mpJeton2): self
     {
         $this->mpJeton2 = $mpJeton2;
+
+        return $this;
+    }
+
+    public function getPartie(): ?Partie
+    {
+        return $this->partie;
+    }
+
+    public function setPartie(?Partie $partie): self
+    {
+        $this->partie = $partie;
+
+        return $this;
+    }
+
+    public function getMpTrouve(): ?string
+    {
+        return $this->MpTrouve;
+    }
+
+    public function setMpTrouve(?string $MpTrouve): self
+    {
+        $this->MpTrouve = $MpTrouve;
+
+        return $this;
+    }
+
+    public function getMot(): ?Mot
+    {
+        return $this->mot;
+    }
+
+    public function setMot(?Mot $mot): self
+    {
+        $this->mot = $mot;
 
         return $this;
     }
