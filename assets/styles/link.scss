@@ -1,0 +1,7 @@
+.link {
+  color: lawngreen;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
