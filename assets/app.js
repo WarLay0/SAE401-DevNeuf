@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -14,3 +15,17 @@ import './styles/__icon_cta.scss';
 import './styles/__link.scss.scss';
 // start the Stimulus application
 import './bootstrap';
+=======
+/*
+ * Welcome to your app's main JavaScript file!
+ *
+ * We recommend including the built version of this JavaScript file
+ * (and its CSS file) in your base layout (base.html.twig).
+ */
+
+// any CSS you import will output into a single css file (app.scss in this case)
+import './styles/app.scss';
+
+// start the Stimulus application
+import './bootstrap';
+>>>>>>> 4c3396189eef056624d3f1c77f198a22bba9653e

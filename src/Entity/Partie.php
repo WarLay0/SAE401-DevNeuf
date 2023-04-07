@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PartieRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PartieRepository::class)]
@@ -16,12 +18,6 @@ class Partie
     #[ORM\Column(length: 255)]
     private ?string $partieEtat = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $partieJoueur1 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $partieJoueur2 = null;
-
     #[ORM\Column]
     private ?int $partieNBTour = null;
 
@@ -33,6 +29,22 @@ class Partie
 
     #[ORM\Column(length: 255)]
     private ?string $partieVictoire = null;
+
+    #[ORM\OneToMany(mappedBy: 'partie', targetEntity: MotPartie::class)]
+    private Collection $motParties;
+
+
+    #[ORM\JoinColumn(name: "id", referencedColumnName: "id", nullable: false)]
+    #[ORM\JoinTable(name: "partie_utilisateur")]
+    #[ORM\InverseJoinColumn(name: "utilisateur_id", referencedColumnName: "utilisateur_id", nullable: false)]
+    #[ORM\ManyToMany(targetEntity: Utilisateur::class, inversedBy: 'parties')]
+    private Collection $joueur;
+
+    public function __construct()
+    {
+        $this->motParties = new ArrayCollection();
+        $this->joueur = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -51,29 +63,6 @@ class Partie
         return $this;
     }
 
-    public function getPartieJoueur1(): ?string
-    {
-        return $this->partieJoueur1;
-    }
-
-    public function setPartieJoueur1(string $partieJoueur1): self
-    {
-        $this->partieJoueur1 = $partieJoueur1;
-
-        return $this;
-    }
-
-    public function getPartieJoueur2(): ?string
-    {
-        return $this->partieJoueur2;
-    }
-
-    public function setPartieJoueur2(string $partieJoueur2): self
-    {
-        $this->partieJoueur2 = $partieJoueur2;
-
-        return $this;
-    }
 
     public function getPartieNBTour(): ?int
     {
@@ -119,6 +108,60 @@ class Partie
     public function setPartieVictoire(string $partieVictoire): self
     {
         $this->partieVictoire = $partieVictoire;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MotPartie>
+     */
+    public function getMotParties(): Collection
+    {
+        return $this->motParties;
+    }
+
+    public function addMotParty(MotPartie $motParty): self
+    {
+        if (!$this->motParties->contains($motParty)) {
+            $this->motParties->add($motParty);
+            $motParty->setPartie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMotParty(MotPartie $motParty): self
+    {
+        if ($this->motParties->removeElement($motParty)) {
+            // set the owning side to null (unless already changed)
+            if ($motParty->getPartie() === $this) {
+                $motParty->setPartie(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Utilisateur>
+     */
+    public function getJoueur(): Collection
+    {
+        return $this->joueur;
+    }
+
+    public function addJoueur(Utilisateur $joueur): self
+    {
+        if (!$this->joueur->contains($joueur)) {
+            $this->joueur->add($joueur);
+        }
+
+        return $this;
+    }
+
+    public function removeJoueur(Utilisateur $joueur): self
+    {
+        $this->joueur->removeElement($joueur);
 
         return $this;
     }
