@@ -12,11 +12,8 @@
         "doctrine/doctrine-bundle": "^2.8",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.14",
-<<<<<<< HEAD
         "fakerphp/faker": "^1.21",
-=======
         "nelmio/cors-bundle": "^2.3",
->>>>>>> 4c3396189eef056624d3f1c77f198a22bba9653e
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.16",
         "sensio/framework-extra-bundle": "^6.1",
