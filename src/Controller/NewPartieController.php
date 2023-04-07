@@ -9,6 +9,7 @@ use App\Repository\MotRepository;
 use App\Repository\PartieRepository;
 use App\Repository\UtilisateurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +23,7 @@ class NewPartieController extends AbstractController
         PartieRepository $partieRepository,
         MotRepository $motRepository,
         UtilisateurRepository $utilisateurRepository,
-    ): Response
+    ): JsonResponse
     {
 
         $joueur1 = $joueur2 = $utilisateurRepository->find(1);
@@ -97,8 +98,17 @@ class NewPartieController extends AbstractController
             $motPartieRepository->save($mp,true);
         }
 
-        return $this->render('new_partie/index.html.twig', [
-            'controller_name' => 'NewPartieController',
-        ]);
+        $responseData = [
+            'status' => 'success',
+            'message' => 'Partie créée avec succès',
+            'partieId' => $partie->getId(),
+            'joueurs' => [
+                ['id' => $joueur1->getUtilisateurId(), 'pseudo' => $joueur1->getUtilisateurPseudo()],
+                ['id' => $joueur2->getUtilisateurId(), 'pseudo' => $joueur2->getUtilisateurPseudo()]
+            ]
+        ];
+
+        return new JsonResponse($responseData, JsonResponse::HTTP_CREATED);
     }
+
 }

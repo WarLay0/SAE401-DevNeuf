@@ -22,12 +22,6 @@ class MotPartie
     #[ORM\Column(length: 255)]
     private ?string $mpCouleurJ2 = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $mpJeton1 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $mpJeton2 = null;
-
     #[ORM\ManyToOne(inversedBy: 'motParties')]
     private ?Partie $partie = null;
 
@@ -78,29 +72,6 @@ class MotPartie
         return $this;
     }
 
-    public function getMpJeton1(): ?string
-    {
-        return $this->mpJeton1;
-    }
-
-    public function setMpJeton1(string $mpJeton1): self
-    {
-        $this->mpJeton1 = $mpJeton1;
-
-        return $this;
-    }
-
-    public function getMpJeton2(): ?string
-    {
-        return $this->mpJeton2;
-    }
-
-    public function setMpJeton2(string $mpJeton2): self
-    {
-        $this->mpJeton2 = $mpJeton2;
-
-        return $this;
-    }
 
     public function getPartie(): ?Partie
     {

@@ -25,9 +25,6 @@ class Partie
     private ?string $partieJoueurTour = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $partieCreateur = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $partieVictoire = null;
 
     #[ORM\OneToMany(mappedBy: 'partie', targetEntity: MotPartie::class)]
@@ -39,6 +36,12 @@ class Partie
     #[ORM\InverseJoinColumn(name: "utilisateur_id", referencedColumnName: "utilisateur_id", nullable: false)]
     #[ORM\ManyToMany(targetEntity: Utilisateur::class, inversedBy: 'parties')]
     private Collection $joueur;
+
+    #[ORM\Column(length: 255)]
+    private ?string $nomPartie = null;
+
+    #[ORM\Column]
+    private ?bool $partie_type = null;
 
     public function __construct()
     {
@@ -84,18 +87,6 @@ class Partie
     public function setPartieJoueurTour(string $partieJoueurTour): self
     {
         $this->partieJoueurTour = $partieJoueurTour;
-
-        return $this;
-    }
-
-    public function getPartieCreateur(): ?string
-    {
-        return $this->partieCreateur;
-    }
-
-    public function setPartieCreateur(string $partieCreateur): self
-    {
-        $this->partieCreateur = $partieCreateur;
 
         return $this;
     }
@@ -165,4 +156,29 @@ class Partie
 
         return $this;
     }
+
+    public function getNomPartie(): ?string
+    {
+        return $this->nomPartie;
+    }
+
+    public function setNomPartie(string $nomPartie): self
+    {
+        $this->nomPartie = $nomPartie;
+
+        return $this;
+    }
+
+    public function isPartieType(): ?bool
+    {
+        return $this->partie_type;
+    }
+
+    public function setPartieType(bool $partie_type): self
+    {
+        $this->partie_type = $partie_type;
+
+        return $this;
+    }
+
 }
