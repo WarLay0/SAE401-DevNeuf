@@ -1,7 +1,48 @@
-body {
-    background-color: lightgray;
+@import '__mixins.scss';
+@import '__colors.scss';
+@import '__icon_btn.scss';
+@import '__icon_cta.scss';
+@import '__link.scss';
+
+.navbar {
+  position: fixed;
+  background-color: $primary-800;
+  height: 100vh;
+  width: 15vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: -10;
+  img {
+    width: 240px;
+  }
+  .navbar-content {
+    display: flex;
+    height: 76vh;
+    flex-direction: column;
+    justify-content: space-between;
+    .navbar-content-upper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 34vh;
+      margin-top: 20px;
+    }
+    .navbar-content-lower {
+      .account-language-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .policy-links-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+      }
+    }
+  }
 }
 
-main{
-    margin-left: 25vw;
-}

@@ -18,56 +18,59 @@
     <body>
         <header>
             <div class="navbar">
-                <img src="{{ asset('images/nav/logo.svg') }}" alt="">
+                <img src="src/assets/img/logo.svg" alt="">
                 <div class="navbar-content">
                     <div class="navbar-content-upper">
-                        <div class="iconBtn">
-                            <div class="iconBtn-fg">
-                                <span class="material-symbols-rounded"></span>Accueil
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Accueil
+                                </div>
+                                <div class="iconBtn-bg"></div>
                             </div>
-                            <div class="iconBtn-bg"></div>
-                        </div>
-{#                        <router-link to="HomeView"><icon_btn text="Accueil" icon="home"/></router-link>#}
-                        <div class="iconBtn">
-                            <div class="iconBtn-fg">
-                                <span class="material-symbols-rounded"></span>Accueil
+                        </a>
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Comment jouer ?
+                                </div>
+                                <div class="iconBtn-bg"></div>
                             </div>
-                            <div class="iconBtn-bg"></div>
-                        </div>
-{#                        <router-link to="HomeView"><icon_btn text="Comment jouer ?" icon="temp_preferences_custom"/></router-link>#}
-                        <div class="iconBtn">
-                            <div class="iconBtn-fg">
-                                <span class="material-symbols-rounded"></span>Accueil
+                        </a>
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Parties jouées ?
+                                </div>
+                                <div class="iconBtn-bg"></div>
                             </div>
-                            <div class="iconBtn-bg"></div>
-                        </div>
-{#                        <router-link to="HomeView"><icon_btn text="Parties jouées" icon="history"/></router-link>#}
-                        <div class="iconBtn">
-                            <div class="iconBtn-fg">
-                                <span class="material-symbols-rounded"></span>Accueil
+                        </a>
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Statistiques
+                                </div>
+                                <div class="iconBtn-bg"></div>
                             </div>
-                            <div class="iconBtn-bg"></div>
-                        </div>
-{#                        <router-link to="HomeView"><icon_btn text="Statistiques" icon="monitoring"/></router-link>#}
+                        </a>
+
                     </div>
                     <div class="navbar-content-lower">
                         <div class="account-language-container">
-                            <div class="iconCta">
-                                <span class="material-symbols-rounded">www</span>
-                            </div>
-{#                            <router-link to=""><Icon_cta icon="person"/></router-link>#}
-                            <div class="iconCta">
-                                <span class="material-symbols-rounded">Profile</span>
-                            </div>
-{#                            <router-link to=""><Icon_cta icon="language"/></router-link>#}
+                            <a href="#">
+                                <div class="iconCta">
+                                    <span class="material-symbols-rounded">www</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="iconCta">
+                                    <span class="material-symbols-rounded">prof</span>
+                                </div>
+                            </a>
                         </div>
-                        <a href="#">Jouer</a>
-{#                        <router-link to="HomeView"><icon_btn text="Jouer" icon="play_arrow"/></router-link>#}
                         <div class="policy-links-container">
-                            <span class="link">Condition d'utilisation</span>
-{#                            <router-link to="HomeView"><Link text="Conditions d'utilisations"/></router-link>#}
-                            <span class="link">Confidentialité</span>
-{#                            <router-link to="HomeView"><Link text="Confidentialité"/></router-link>#}
+                            <a href="#"><span>Conditions d'utilisations</span></a>
+                            <a href="#"><span>Politique de confidentialité</span></a>
                         </div>
                     </div>
                 </div>
