@@ -101,16 +101,26 @@ class CreationPartieController extends AbstractController
                 $mp->setPartie($partie);
                 $mp->setMot(array_pop($tMots));
                 $mp->setMpCouleurJ1($tCartes[$i][1]);
-                $mp->setMPCouleurJ2($tCartes[$i][2]);
+                $mp->setMpCouleurJ2($tCartes[$i][2]);
+                $mp->setMpJeton1(false);
+                $mp->setMpJeton2(false);
                 $mp->setMpEmplacement($i);
                 $mp->setMpTrouve(false);
                 $motPartieRepository->save($mp,true);
             }
 
             $partie->addJoueur($utilisateur2);
-            return $this->render('new_partie/index.html.twig', [
-                'partie' => $partie,
-            ]);
+
+//            $partieData = [
+//                'id' => $partie->getId(),
+//                'joueur1' => $partie->addJoueur()->getUtilisateurPseudo(),
+//                'joueur2' => $partie->addJoueur()->getUtilisateurPseudo(),
+//                // Ajouter d'autres données de la partie selon vos besoins
+//            ];
+
+//            return $this->render('new_partie/index.html.twig', [
+//                'partie' => $partieData,
+//            ]);
         }
 
         return $this->render('creation_partie/index.html.twig', [
