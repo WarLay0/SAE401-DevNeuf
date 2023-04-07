@@ -27,11 +27,12 @@ class NewPartieController extends AbstractController
 
         $joueur1 = $joueur2 = $utilisateurRepository->find(1);
         $partie = new Partie();
-        $partie->setPartieJoueur1($this->getUser());
+        var_dump($this->getUser());
+        $partie->addJoueur($this->getUser());
 
         $joueur2 = $utilisateurRepository->find(2);
-        $partie->setPartieJoueur1($joueur2);
-        $partie->setPartieJoueurTour($joueur1);//mettre $this->getUser()
+        $partie->addJoueur($joueur2);
+        $partie->addJoueur($this->getUser());//mettre $this->getUser()
         $partie->setPartieEtat('en cours');
         $partie->setPartieVictoire(false);
 

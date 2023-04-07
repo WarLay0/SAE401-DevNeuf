@@ -33,8 +33,11 @@ class Partie
     #[ORM\OneToMany(mappedBy: 'partie', targetEntity: MotPartie::class)]
     private Collection $motParties;
 
+
+    #[ORM\JoinColumn(name: "id", referencedColumnName: "id", nullable: false)]
+    #[ORM\JoinTable(name: "partie_utilisateur")]
+    #[ORM\InverseJoinColumn(name: "utilisateur_id", referencedColumnName: "utilisateur_id", nullable: false)]
     #[ORM\ManyToMany(targetEntity: Utilisateur::class, inversedBy: 'parties')]
-    #[ORM\JoinColumn(name: "utilisateur_id", referencedColumnName: "utilisateur_id", nullable: false)]
     private Collection $joueur;
 
     public function __construct()
