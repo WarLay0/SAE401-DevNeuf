@@ -111,16 +111,6 @@ class CreationPartieController extends AbstractController
 
             $partie->addJoueur($utilisateur2);
 
-//            $partieData = [
-//                'id' => $partie->getId(),
-//                'joueur1' => $partie->addJoueur()->getUtilisateurPseudo(),
-//                'joueur2' => $partie->addJoueur()->getUtilisateurPseudo(),
-//                // Ajouter d'autres données de la partie selon vos besoins
-//            ];
-
-//            return $this->render('new_partie/index.html.twig', [
-//                'partie' => $partieData,
-//            ]);
         }
 
         return $this->render('creation_partie/index.html.twig', [
