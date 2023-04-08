@@ -39,12 +39,17 @@ class CreationPartieController extends AbstractController
             $partie->setPartieNBTour(12);
             $partie->setPartieJoueurTour($joueur1->getUtilisateurPseudo());
 
+
+
             $utilisateur2 = $utilisateurRepository->findOneBy(['utilisateur_email' => $joueur2]);
 
             if (!$utilisateur2) {
                 $this->addFlash('danger', 'L\'utilisateur avec cet e-mail n\'existe pas.');
                 return $this->redirectToRoute('app_creation_partie');
             }
+
+            $partie->addJoueur($joueur1);
+            $partie->addJoueur($utilisateur2);
 
             $partieRepository->save($partie,true);
 
