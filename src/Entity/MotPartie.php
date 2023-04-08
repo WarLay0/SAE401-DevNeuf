@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\MotPartieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MotPartieRepository::class)]
+#[ApiResource()]
 class MotPartie
 {
     #[ORM\Id]
@@ -23,6 +25,7 @@ class MotPartie
     private ?string $mpCouleurJ2 = null;
 
     #[ORM\ManyToOne(inversedBy: 'motParties')]
+
     private ?Partie $partie = null;
 
     #[ORM\Column(length: 255, nullable: true)]

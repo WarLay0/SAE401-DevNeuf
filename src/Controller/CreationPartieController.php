@@ -116,6 +116,8 @@ class CreationPartieController extends AbstractController
 
             $partie->addJoueur($utilisateur2);
 
+
+
         }
 
         return $this->render('creation_partie/index.html.twig', [
