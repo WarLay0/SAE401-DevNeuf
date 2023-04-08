@@ -4,8 +4,20 @@
 
 {% block body %}
 
-    {% for partie in parties %}
-
-    {% endfor %}
+    <h1>Liste des parties</h1>
+    <ul>
+        <p>Nombre de parties en cours : {{ parties|length }}</p>
+        {% for partie in parties %}
+            <li>
+                <h2>{{ partie.nomPartie }}</h2>
+                <p>Joueurs :</p>
+                <ul>
+                    {% for joueur in partie.joueur %}
+                        <li>{{ joueur.getUtilisateurPseudo() }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
