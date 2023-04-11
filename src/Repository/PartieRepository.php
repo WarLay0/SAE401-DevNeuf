@@ -66,4 +66,17 @@ class PartieRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findAllPartiesLibre(int $utilisateur_id): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p')
+            ->join('p.joueur', 'u')
+            ->where('p.partieEtat = :etat')
+            ->having('COUNT(u) = 1')
+            ->groupBy('p.id')
+            ->setParameter('etat', 'en cours')
+            ->getQuery()
+            ->getResult();
+    }
 }

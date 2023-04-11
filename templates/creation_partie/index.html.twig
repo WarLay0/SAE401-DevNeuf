@@ -5,6 +5,12 @@
 {% block body %}
     <h1>Création d'une partie</h1>
 
+    {% for messages in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ messages }}
+        </div>
+    {% endfor %}
+
 {{ form_start(formCreationPartie) }}
 {{ form_widget(formCreationPartie) }}
     <button type="submit" class="btn">Créer la partie</button>
