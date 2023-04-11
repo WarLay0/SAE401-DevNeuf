@@ -52,7 +52,6 @@ class CreationPartieController extends AbstractController
                 return $this->redirectToRoute('app_creation_partie');
             }
             else{
-
                 $partie->addJoueur($joueur1);
                 $partie->addJoueur($utilisateur2);
             }

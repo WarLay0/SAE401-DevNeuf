@@ -19,7 +19,7 @@
                     {% endfor %}
                 </ul>
                 <div class="cont-but">
-                    <a href="{{ path('app_join_partie', {'id': partie.id}) }}" class="game-button">REJOINDRE</a>
+                    <button><a href="{{ path('app_join_partie', {'id': partie.id}) }}" class="game-button">REJOINDRE</a></button>
                 </div>
             </li>
         {% endfor %}
@@ -35,7 +35,7 @@
                         {% endfor %}
                     </ul>
                     <div class="cont-but">
-                        <a href="{{ path('app_join_partie', {'id': allPartie.id}) }}" class="game-button">REJOINDRE</a>
+                        <button><a href="{{ path('app_join_partie', {'id': allPartie.id}) }}" class="game-button">REJOINDRE</a></button>
                     </div>
                 </li>
         {% endfor %}
