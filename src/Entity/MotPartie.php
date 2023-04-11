@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\MotPartieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MotPartieRepository::class)]
+#[ApiResource()]
 class MotPartie
 {
     #[ORM\Id]
@@ -23,6 +25,7 @@ class MotPartie
     private ?string $mpCouleurJ2 = null;
 
     #[ORM\ManyToOne(inversedBy: 'motParties')]
+
     private ?Partie $partie = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -30,6 +33,12 @@ class MotPartie
 
     #[ORM\ManyToOne(inversedBy: 'motParties')]
     private ?Mot $mot = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $mpJeton1 = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $mpJeton2 = null;
 
     public function getId(): ?int
     {
@@ -105,6 +114,30 @@ class MotPartie
     public function setMot(?Mot $mot): self
     {
         $this->mot = $mot;
+
+        return $this;
+    }
+
+    public function getMpJeton1(): ?string
+    {
+        return $this->mpJeton1;
+    }
+
+    public function setMpJeton1(?string $mpJeton1): self
+    {
+        $this->mpJeton1 = $mpJeton1;
+
+        return $this;
+    }
+
+    public function getMpJeton2(): ?string
+    {
+        return $this->mpJeton2;
+    }
+
+    public function setMpJeton2(?string $mpJeton2): self
+    {
+        $this->mpJeton2 = $mpJeton2;
 
         return $this;
     }

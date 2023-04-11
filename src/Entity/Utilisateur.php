@@ -59,6 +59,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
         $this->tokenRegistrationLifeTime = (new \DateTime('now'))->add(new \DateInterval('P1D'));
         $this->avatar = 'avatar.png';
         $this->parties = new ArrayCollection();
+        $this->partieCreateur = new ArrayCollection();
     }
 
 
