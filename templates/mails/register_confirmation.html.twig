@@ -1,0 +1,8 @@
+<h1>Confirmation de votre compte utilisateur</h1>
+<p>
+    Bonjour, {{ utilisateur.getUtilisateurPseudo()}} et bienvenue sur notre site de jeu. <br><br>
+    Veuillez confirmer votre compte en cliquant sur le lien suivant :
+    <a href="{{ absolute_url(path('account_verify', {token: token, id: utilisateur.getUtilisateurId()})) }}">Lien de vérification</a><br> <br>
+    A savoir ce lien est valable jusqu'au <strong>{{ lifeTimeToken }}</strong>, après cette date il ne sera plus valable. <br><br>
+
+</p>

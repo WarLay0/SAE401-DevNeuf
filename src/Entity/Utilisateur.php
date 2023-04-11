@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -46,12 +48,18 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $avatar = null;
 
+    #[ORM\ManyToMany(targetEntity: Partie::class, mappedBy: 'joueur')]
+    private Collection $parties;
+
 
     public function __construct()
     {
         $this->utilisateur_created_at = $utilisateur_created_at ?? new \DateTimeImmutable();
         $this->isVerified = false;
         $this->tokenRegistrationLifeTime = (new \DateTime('now'))->add(new \DateInterval('P1D'));
+        $this->avatar = 'avatar.png';
+        $this->parties = new ArrayCollection();
+        $this->partieCreateur = new ArrayCollection();
     }
 
 
@@ -194,6 +202,33 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAvatar(string $avatar): self
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Partie>
+     */
+    public function getParties(): Collection
+    {
+        return $this->parties;
+    }
+
+    public function addParty(Partie $party): self
+    {
+        if (!$this->parties->contains($party)) {
+            $this->parties->add($party);
+            $party->addJoueur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParty(Partie $party): self
+    {
+        if ($this->parties->removeElement($party)) {
+            $party->removeJoueur($this);
+        }
 
         return $this;
     }
