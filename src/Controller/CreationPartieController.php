@@ -38,22 +38,24 @@ class CreationPartieController extends AbstractController
             $partie->setPartieVictoire(false);
             $partie->setPartieNBTour(12);
             $partie->setPartieJoueurTour($joueur1->getUtilisateurPseudo());
+            $partie->addJoueur($joueur1);
+
+            $utilisateur2 = $utilisateurRepository->findOneBy(['utilisateur_email' => $joueur2]);
+
+
 
             if (empty($joueur2)){
-                $partie->addJoueur(null);
+                $joueur2 = null;
             }
-            else{
-                $utilisateur2 = $utilisateurRepository->findOneBy(['utilisateur_email' => $joueur2]);
-            }
-
-            if (!$utilisateur2) {
+            elseif (!isset($utilisateur2)) {
                 $this->addFlash('danger', 'L\'utilisateur avec cet e-mail n\'existe pas.');
                 return $this->redirectToRoute('app_creation_partie');
             }
+            else{
 
-            $partie->addJoueur($joueur1);
-            $partie->addJoueur($utilisateur2);
-
+                $partie->addJoueur($joueur1);
+                $partie->addJoueur($utilisateur2);
+            }
 
 
             $partieRepository->save($partie,true);
