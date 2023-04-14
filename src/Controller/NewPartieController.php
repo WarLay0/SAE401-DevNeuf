@@ -9,6 +9,7 @@ use App\Repository\MotRepository;
 use App\Repository\PartieRepository;
 use App\Repository\UtilisateurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,17 +23,15 @@ class NewPartieController extends AbstractController
         PartieRepository $partieRepository,
         MotRepository $motRepository,
         UtilisateurRepository $utilisateurRepository,
-    ): Response
+    ): JsonResponse
     {
-
-        $joueur1 = $joueur2 = $utilisateurRepository->find(1);
+        $joueur1 = $this->getUser();
+        $joueur2 = $utilisateurRepository->find(2);
         $partie = new Partie();
         var_dump($this->getUser());
-        $partie->addJoueur($this->getUser());
-
-        $joueur2 = $utilisateurRepository->find(2);
+        $partie->addJoueur($joueur1);
         $partie->addJoueur($joueur2);
-        $partie->addJoueur($this->getUser());//mettre $this->getUser()
+        $partie->setPartieJoueurTour($joueur1);//mettre $this->getUser()
         $partie->setPartieEtat('en cours');
         $partie->setPartieVictoire(false);
 
@@ -95,10 +94,20 @@ class NewPartieController extends AbstractController
             $mp->setMpEmplacement($i);
             $mp->setMpTrouve(false);
             $motPartieRepository->save($mp,true);
+            $partieRepository->save($partie,true);
         }
 
-        return $this->render('new_partie/index.html.twig', [
-            'controller_name' => 'NewPartieController',
-        ]);
+        $responseData = [
+            'status' => 'success',
+            'message' => 'Partie créée avec succès',
+            'partieId' => $partie->getId(),
+            'joueurs' => [
+                ['id' => $joueur1->getUtilisateurId(), 'pseudo' => $joueur1->getUtilisateurPseudo()],
+                ['id' => $joueur2->getUtilisateurId(), 'pseudo' => $joueur2->getUtilisateurPseudo()]
+            ]
+        ];
+
+        return new JsonResponse($responseData, JsonResponse::HTTP_CREATED);
     }
+
 }

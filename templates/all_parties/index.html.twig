@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AllPartiesController!{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des parties</h1>
+    <ul>
+        <h2>Listes des parties où vous êtes dedans</h2>
+        <p>Nombre de parties en cours : {{ parties|length }}</p>
+        {% for partie in parties %}
+            <li>
+                <h3>{{ partie.nomPartie }}</h3>
+                <p>Joueurs :</p>
+                <ul>
+                    {% for joueur in partie.joueur %}
+                        <li>{{ joueur.getUtilisateurPseudo() }}</li>
+
+                    {% endfor %}
+                </ul>
+                <div class="cont-but">
+                    <button><a href="{{ path('app_join_partie', {'id': partie.id}) }}" class="game-button">REJOINDRE</a></button>
+                </div>
+            </li>
+        {% endfor %}
+
+        <h2>Listes des parties où il n'y a qu'un joueur</h2>
+        {% for allPartie in allParties %}
+                <li>
+                    <h3>{{ allPartie.nomPartie }}</h3>
+                    <p>Joueur :</p>
+                    <ul>
+                        {% for joueur in allPartie.joueur %}
+                            <li>{{ joueur.getUtilisateurPseudo() }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="cont-but">
+                        <button><a href="{{ path('app_join_partie', {'id': allPartie.id}) }}" class="game-button">REJOINDRE</a></button>
+                    </div>
+                </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
