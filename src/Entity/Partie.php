@@ -33,9 +33,9 @@ class Partie
     private Collection $motParties;
 
 
-    #[ORM\JoinColumn(name: "id", referencedColumnName: "id", nullable: false)]
+    #[ORM\JoinColumn(name: "id", referencedColumnName: "id", nullable: true)]
     #[ORM\JoinTable(name: "partie_utilisateur")]
-    #[ORM\InverseJoinColumn(name: "utilisateur_id", referencedColumnName: "utilisateur_id", nullable: false)]
+    #[ORM\InverseJoinColumn(name: "utilisateur_id", referencedColumnName: "utilisateur_id", nullable: true)]
     #[ORM\ManyToMany(targetEntity: Utilisateur::class, inversedBy: 'parties')]
     private Collection $joueur;
 
