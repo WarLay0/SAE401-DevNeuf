@@ -25,5 +25,3 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
-/composer.phar
-/migrations/Version20230411124043.php
