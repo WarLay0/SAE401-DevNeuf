@@ -1,8 +1,12 @@
-@import '__mixins.scss';
-@import '__colors.scss';
-@import '__icon_btn.scss';
-@import '__icon_cta.scss';
-@import '__link.scss';
+@import '_color.scss';
+@import '_bouton.scss';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 .navbar {
   position: fixed;
@@ -13,7 +17,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: -10;
   img {
     width: 240px;
   }
@@ -44,5 +47,16 @@
       }
     }
   }
+}
+body{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+main{
+  width: 85vw;
+  padding: 50px;
+  margin-left: 15vw;
+  background-color: $primary-100;
 }
 

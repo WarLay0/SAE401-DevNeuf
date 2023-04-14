@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="MessDetectorOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="PHPCSFixerOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ChangeListManager">
+    <list default="true" id="653e55e9-4f07-4e88-bdd7-d370fd99c40d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/styles/_bouton.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/styles/_mixin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SAE401-DevNeuf.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/__colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/_color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/__icon_btn.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/__icon_cta.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/__link.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/__mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="PHPCodeSnifferOptionsConfiguration">
-    <option name="highlightLevel" value="WARNING" />
-    <option name="transferred" value="true" />
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
   </component>
-  <component name="PhpIncludePathManager">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -145,16 +172,74 @@
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
-  <component name="PhpStanOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ProjectId" id="2NMpQN8D6lRe9GxG99jlNb4DKQg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PhpUnit">
-    <phpunit_settings>
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
-    </phpunit_settings>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/evanb/Desktop/GitHub/SAE401-DevNeuf/assets/styles&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\evanb\Desktop\GitHub\SAE401-DevNeuf\assets\styles" />
+      <recent name="C:\Users\evanb\Desktop\GitHub\SAE401-DevNeuf\public\images" />
+      <recent name="C:\Users\evanb\Desktop\GitHub\SAE401-DevNeuf\src\Repository" />
+      <recent name="C:\Users\evanb\Desktop\GitHub\SAE401-DevNeuf\src\Entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\evanb\Desktop\GitHub\SAE401-DevNeuf\public" />
+      <recent name="C:\Users\evanb\Desktop\GitHub\SAE401-DevNeuf\templates" />
+    </key>
   </component>
-  <component name="PsalmOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="653e55e9-4f07-4e88-bdd7-d370fd99c40d" name="Changes" comment="" />
+      <created>1679483790541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679483790541</updated>
+      <workItem from="1679483793785" duration="933000" />
+      <workItem from="1680005929656" duration="21000" />
+      <workItem from="1680078626757" duration="12313000" />
+      <workItem from="1680512909007" duration="20000" />
+      <workItem from="1680686049461" duration="4477000" />
+      <workItem from="1680705876827" duration="508000" />
+      <workItem from="1680857837642" duration="5558000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/app.js</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

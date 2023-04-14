@@ -1,8 +1,0 @@
-span {
-    @include p-bold;
-    color: $secondary-500;
-    &:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    }
-}
