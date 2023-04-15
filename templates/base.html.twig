@@ -12,8 +12,72 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/rules.js') }}"></script>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <div class="navbar">
+                <img src="src/assets/img/logo.svg" alt="">
+                <div class="navbar-content">
+                    <div class="navbar-content-upper">
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Accueil
+                                </div>
+                                <div class="iconBtn-bg"></div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Comment jouer ?
+                                </div>
+                                <div class="iconBtn-bg"></div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Parties jouées ?
+                                </div>
+                                <div class="iconBtn-bg"></div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"></span>Statistiques
+                                </div>
+                                <div class="iconBtn-bg"></div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="navbar-content-lower">
+                        <div class="account-language-container">
+                            <a href="#">
+                                <div class="iconCta">
+                                    <span class="material-symbols-rounded">www</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="iconCta">
+                                    <span class="material-symbols-rounded">prof</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="policy-links-container">
+                            <a href="#"><span>Conditions d'utilisations</span></a>
+                            <a href="#"><span>Politique de confidentialité</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
