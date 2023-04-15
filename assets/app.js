@@ -11,7 +11,7 @@ import './styles/__colors.scss';
 import './styles/__mixins.scss';
 import './styles/__icon_btn.scss';
 import './styles/__icon_cta.scss';
-import './styles/__link.scss.scss';
+import './styles/__link.scss';
 // start the Stimulus application
 import './bootstrap';
 
