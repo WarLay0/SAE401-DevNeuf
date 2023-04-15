@@ -21,7 +21,7 @@
                 <img src="src/assets/img/logo.svg" alt="">
                 <div class="navbar-content">
                     <div class="navbar-content-upper">
-                        <a href="#">
+                        <a href="{{ path('app_accueil') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
                                     <span class="material-symbols-rounded"></span>Accueil
@@ -29,7 +29,7 @@
                                 <div class="iconBtn-bg"></div>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="{{ path('app_rules') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
                                     <span class="material-symbols-rounded"></span>Comment jouer ?
@@ -37,15 +37,15 @@
                                 <div class="iconBtn-bg"></div>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="{{ path('app_all_parties') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
-                                    <span class="material-symbols-rounded"></span>Parties jouées ?
+                                    <span class="material-symbols-rounded"></span>Listes des parties
                                 </div>
                                 <div class="iconBtn-bg"></div>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="{{ path('app_stats') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
                                     <span class="material-symbols-rounded"></span>Statistiques
@@ -57,14 +57,14 @@
                     </div>
                     <div class="navbar-content-lower">
                         <div class="account-language-container">
-                            <a href="#">
+                            <a href="{{ path('app_login') }}">
                                 <div class="iconCta">
-                                    <span class="material-symbols-rounded">www</span>
+                                    <span class="material-symbols-rounded">connexion</span>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="{{ path('app_register') }}">
                                 <div class="iconCta">
-                                    <span class="material-symbols-rounded">prof</span>
+                                    <span class="material-symbols-rounded">inscription</span>
                                 </div>
                             </a>
                         </div>
