@@ -1,0 +1,15 @@
+.iconCta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    color: $secondary-500;
+    
+    &:hover {
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: rgba(185, 88, 88, 0.25);
+    }
+}
