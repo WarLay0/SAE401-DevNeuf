@@ -3,12 +3,18 @@
 {% block title %}Hello RulesController!{% endblock %}
 
 {% block body %}
-    <h1>Règles</h1>
-    <div>
-        <div id="rulesLeft"><img src="{{ asset('images/RulesArrow.svg') }}" alt="Arrow Left"></div>
-        <div id="rulesTittle"></div>
-        <div id="rulesImage"></div>
-        <div id="rulesContent"></div>
-        <div id="rulesRight"><img src="{{ asset('images/RulesArrow.svg') }}" alt="Arrow Right"></div>
+    <div class="rules">
+        <h1>Règles</h1>
+        <div class="rulesContent">
+            <div id="rulesTittle"></div>
+            <div id="rulesImg">
+                <div id="rulesLeft" class="rulesArrow"><img src="{{ asset('images/RulesArrow.svg') }}" alt="Arrow
+                Left"></div>
+                <div id="rulesImage"></div>
+                <div id="rulesRight" class="rulesArrow"><img src="{{ asset('images/RulesArrow.svg') }}" alt="Arrow Right"></div>
+            </div>
+            <div id="rulesContent"></div>
+
+        </div>
     </div>
 {% endblock %}

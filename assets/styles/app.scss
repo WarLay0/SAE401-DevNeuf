@@ -1,6 +1,7 @@
 @import '_color.scss';
 @import '_bouton.scss';
 @import '_link.scss';
+@import '_mixin.scss';
 
 *{
     padding: 0;
@@ -58,5 +59,38 @@ main{
     p{
         @include p;
         margin: 10px;
+    }
+}
+
+//CSS de la page rules
+
+.rules{
+    display: flex;
+    flex-direction: column;
+    h1{
+        @include h1;
+    }
+    .rulesContent{
+        width: 672px;
+        margin : 0 auto;
+        #rulesTittle{
+            @include h2;
+            text-align: center;
+        }
+        #rulesImg{
+            display: flex;
+            .rulesArrow{
+                display: flex;
+                justify-content: center;
+            }
+            #rulesLeft{
+                transform: rotate(180deg);
+            }
+        }
+        #rulesContent{
+            p{
+                @include p;
+            }
+        }
     }
 }
