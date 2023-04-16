@@ -11,6 +11,7 @@
 body{
     position: absolute;
     left: 300px;
+    background-color: $primary-900;
 }
 // CSS de la navbar globale
 
@@ -36,9 +37,8 @@ body{
 
 main{
     width: calc(100vw - 300px);
-    height: 100vh;
     color: white;
-    background-color: $primary-900;
+    padding: 70px;
 }
 
 //CSS de la page index
@@ -46,9 +46,17 @@ main{
 .index{
     display: flex;
     flex-direction: column;
-    text-align: center;
+    h1{
+        @include h1;
+    }
     img{
         width: 670px;
         height: 263px;
+        margin: 0 auto;
+        margin: 42px;
+    }
+    p{
+        @include p;
+        margin: 10px;
     }
 }
