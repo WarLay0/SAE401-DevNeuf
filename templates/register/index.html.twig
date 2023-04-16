@@ -3,26 +3,21 @@
 {% block title %}Hello RegisterController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="register">
+        <h1>Veuillez vous enregistrer</h1>
+        <div >
+            {{ form_start(RegisterForm) }}
+            {{ form_row(RegisterForm.utilisateur_pseudo) }}
+            {{ form_row(RegisterForm.utilisateur_email) }}
+            {{ form_row(RegisterForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+            {{ form_row(RegisterForm.agreeTerms,{
+                label: "Veuillez cocher la case pour valider votre inscription"
+            }) }}
 
-
-    <h1>Veuillez vous enregistrer</h1>
-    <div >
-        {{ form_start(RegisterForm) }}
-        {{ form_row(RegisterForm.utilisateur_pseudo) }}
-        {{ form_row(RegisterForm.utilisateur_email) }}
-        {{ form_row(RegisterForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
-        {{ form_row(RegisterForm.agreeTerms,{
-            label: "Veuillez cocher la case pour valider votre inscription"
-        }) }}
-
-        <button type="submit" class="btn">S'inscrire</button>
-        {{ form_end(RegisterForm) }}
+            <button type="submit" class="btn">S'inscrire</button>
+            {{ form_end(RegisterForm) }}
+        </div>
     </div>
-</div>
 {% endblock %}

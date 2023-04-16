@@ -21,7 +21,7 @@
                 <img src="{{ asset('logo.png') }}" alt="">
                 <div class="navbar-content">
                     <div class="navbar-content-upper">
-                        <a href="{{ path('app_index') }}">
+                        <a href="{{ path('app_accueil') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
                                     <span class="material-symbols-rounded"><img src="{{ asset('images/ico/home.svg')
@@ -39,7 +39,7 @@
                                 <div class="iconBtn-bg"></div>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="{{ path('app_all_parties') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
                                     <span class="material-symbols-rounded"><img src="{{ asset('images/ico/controller.svg') }}" alt=""></span><p>Parties jouées ?</p>
@@ -47,7 +47,7 @@
                                 <div class="iconBtn-bg"></div>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="{{ path('app_stats') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
                                     <span class="material-symbols-rounded"><img src="{{ asset('images/ico/stats.svg')
@@ -66,7 +66,7 @@
                                                                                 alt=""></span>
                                 </div>
                             </a>
-                            <a href="#">
+                            <a href="{{ path('app_profil') }}">
                                 <div class="iconCta">
                                     <span class="material-symbols-rounded"><img src="{{ asset('images/ico/profile.svg') }}" alt=""></span>
                                 </div>

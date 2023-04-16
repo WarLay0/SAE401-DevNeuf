@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AllPartiesController extends AbstractController
 {
-    #[Route('/all/parties', name: 'app_all_parties')]
+    #[Route('/allparties', name: 'app_all_parties')]
     public function AllParties(PartieRepository $partieRepository, UtilisateurRepository $utilisateurRepository): Response
     {
 
