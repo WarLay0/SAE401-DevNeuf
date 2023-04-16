@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\MotPartieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MotPartieRepository::class)]
+#[ApiResource()]
 class MotPartie
 {
     #[ORM\Id]
@@ -22,10 +24,20 @@ class MotPartie
     #[ORM\Column(length: 255)]
     private ?string $mpCouleurJ2 = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\ManyToOne(inversedBy: 'motParties')]
+
+    private ?Partie $partie = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $MpTrouve = null;
+
+    #[ORM\ManyToOne(inversedBy: 'motParties')]
+    private ?Mot $mot = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $mpJeton1 = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $mpJeton2 = null;
 
     public function getId(): ?int
@@ -69,12 +81,49 @@ class MotPartie
         return $this;
     }
 
+
+    public function getPartie(): ?Partie
+    {
+        return $this->partie;
+    }
+
+    public function setPartie(?Partie $partie): self
+    {
+        $this->partie = $partie;
+
+        return $this;
+    }
+
+    public function getMpTrouve(): ?string
+    {
+        return $this->MpTrouve;
+    }
+
+    public function setMpTrouve(?string $MpTrouve): self
+    {
+        $this->MpTrouve = $MpTrouve;
+
+        return $this;
+    }
+
+    public function getMot(): ?Mot
+    {
+        return $this->mot;
+    }
+
+    public function setMot(?Mot $mot): self
+    {
+        $this->mot = $mot;
+
+        return $this;
+    }
+
     public function getMpJeton1(): ?string
     {
         return $this->mpJeton1;
     }
 
-    public function setMpJeton1(string $mpJeton1): self
+    public function setMpJeton1(?string $mpJeton1): self
     {
         $this->mpJeton1 = $mpJeton1;
 
@@ -86,7 +135,7 @@ class MotPartie
         return $this->mpJeton2;
     }
 
-    public function setMpJeton2(string $mpJeton2): self
+    public function setMpJeton2(?string $mpJeton2): self
     {
         $this->mpJeton2 = $mpJeton2;
 

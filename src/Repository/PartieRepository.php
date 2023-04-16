@@ -54,13 +54,29 @@ class PartieRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Partie
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function findPartiesEnCoursPourUtilisateurConnecte(int $utilisateur_id): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p')
+            ->join('p.joueur', 'u')
+            ->where('p.partieEtat = :etat')
+            ->andWhere('u.utilisateur_id = :utilisateur_id')
+            ->setParameter('etat', 'en cours')
+            ->setParameter('utilisateur_id', $utilisateur_id)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findAllPartiesLibre(int $utilisateur_id): array
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p')
+            ->join('p.joueur', 'u')
+            ->where('p.partieEtat = :etat')
+            ->having('COUNT(u) = 1')
+            ->groupBy('p.id')
+            ->setParameter('etat', 'en cours')
+            ->getQuery()
+            ->getResult();
+    }
 }

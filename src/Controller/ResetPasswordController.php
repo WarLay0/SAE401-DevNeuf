@@ -41,10 +41,12 @@ class ResetPasswordController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             return $this->processSendingPasswordResetEmail(
                 $form->get('utilisateur_email')->getData(),
                 $mailer,
                 $translator
+
             );
         }
 
@@ -157,9 +159,9 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('no-reply@dualguest.com', 'DualGuest'))
+            ->from(new Address('noreply@dualguest.fr', 'DualGuest'))
             ->to($user->getUtilisateurEmail())
-            ->subject('Your password reset request')
+            ->subject('Réinitialisation de votre mot de passe DualGuest')
             ->htmlTemplate('reset_password/email.html.twig')
             ->context([
                 'resetToken' => $resetToken,
@@ -173,4 +175,5 @@ class ResetPasswordController extends AbstractController
 
         return $this->redirectToRoute('app_check_email');
     }
+
 }
