@@ -18,13 +18,23 @@
     <body>
         <header>
             <div class="navbar">
-                <img src="src/assets/img/logo.svg" alt="">
+                <img src="{{ asset('logo.png') }}" alt="">
                 <div class="navbar-content">
                     <div class="navbar-content-upper">
-                        <a href="#">
+                        <a href="{{ path('app_index') }}">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
-                                    <span class="material-symbols-rounded"></span>Accueil
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/home.svg')
+                                        }}" alt=""></span><p>Accueil</p>
+                                </div>
+                                <div class="iconBtn-bg"></div>
+                            </div>
+                        </a>
+                        <a href="{{ path('app_rules') }}">
+                            <div class="iconBtn">
+                                <div class="iconBtn-fg">
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/page.svg')
+                                        }}" alt=""></span><p>Comment jouer ?</p>
                                 </div>
                                 <div class="iconBtn-bg"></div>
                             </div>
@@ -32,7 +42,7 @@
                         <a href="#">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
-                                    <span class="material-symbols-rounded"></span>Comment jouer ?
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/controller.svg') }}" alt=""></span><p>Parties jouées ?</p>
                                 </div>
                                 <div class="iconBtn-bg"></div>
                             </div>
@@ -40,15 +50,8 @@
                         <a href="#">
                             <div class="iconBtn">
                                 <div class="iconBtn-fg">
-                                    <span class="material-symbols-rounded"></span>Parties jouées ?
-                                </div>
-                                <div class="iconBtn-bg"></div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="iconBtn">
-                                <div class="iconBtn-fg">
-                                    <span class="material-symbols-rounded"></span>Statistiques
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/stats.svg')
+                                        }}" alt=""></span><p>Statistiques</p>
                                 </div>
                                 <div class="iconBtn-bg"></div>
                             </div>
@@ -59,12 +62,13 @@
                         <div class="account-language-container">
                             <a href="#">
                                 <div class="iconCta">
-                                    <span class="material-symbols-rounded">www</span>
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/www.svg') }}"
+                                                                                alt=""></span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div class="iconCta">
-                                    <span class="material-symbols-rounded">prof</span>
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/profile.svg') }}" alt=""></span>
                                 </div>
                             </a>
                         </div>
