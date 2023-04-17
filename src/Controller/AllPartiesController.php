@@ -18,8 +18,7 @@ class AllPartiesController extends AbstractController
         $utilisateur = $this->getUser();
         $parties = $partieRepository->findPartiesEnCoursPourUtilisateurConnecte($utilisateur->getUtilisateurId());
         $allParties = $partieRepository->findAllPartiesLibre($utilisateur->getUtilisateurId());
-        dump($parties);
-        dump($utilisateur);
+
 
         return $this->render('all_parties/index.html.twig', [
             'parties' => $parties,
