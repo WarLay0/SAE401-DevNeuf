@@ -5,6 +5,8 @@
 {% block body %}
 
     <h1>Liste des parties</h1>
+    <h2><a href="{{ path('app_creation_partie') }}">Nouvelle partie</a></h2>
+
     <ul>
         <h2>Listes des parties où vous êtes dedans</h2>
         <p>Nombre de parties en cours : {{ parties|length }}</p>

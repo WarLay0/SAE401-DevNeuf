@@ -107,7 +107,15 @@
                                 </a>
                         </div>
                         {% endif %}
-                        <div class="policy-links-container">
+                            <form method="post" action="{{ path('set_language', {'locale': 'en'}) }}">
+                                <button type="submit">English</button>
+                            </form>
+
+                            <form method="post" action="{{ path('set_language', {'locale': 'fr'}) }}">
+                                <button type="submit">Français</button>
+                            </form>
+
+                            <div class="policy-links-container">
                             <a href="#"><span>Conditions d'utilisations</span></a>
                             <a href="#"><span>Politique de confidentialité</span></a>
                         </div>
