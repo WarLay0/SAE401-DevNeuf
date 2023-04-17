@@ -35,7 +35,7 @@ class RegisterController extends AbstractController
 
 
             // TOKEN GENERATOR
-            $tokenRegistration = $tokenGeneratorInterface->generateToken();
+//            $tokenRegistration = $tokenGeneratorInterface->generateToken();
 
             // User
             $utilisateur->setPassword(
@@ -47,23 +47,25 @@ class RegisterController extends AbstractController
 
 
             // USER TOKEN
-            $utilisateur->setTokenRegistration($tokenRegistration);
+//            $utilisateur->setTokenRegistration($tokenRegistration);
+
+            $utilisateur->setTokenRegistration(null);
 
             $entityManager->persist($utilisateur);
             $entityManager->flush();
 
             // MAILER SEND
 
-            $mailerService->send(
-                $utilisateur->getUtilisateurEmail(),
-                'Confirmation de votre compte',
-                'register_confirmation.html.twig',
-                [
-                    'utilisateur' => $utilisateur,
-                    'token' => $tokenRegistration,
-                    'lifeTimeToken' => $utilisateur->getTokenRegistrationLifeTime()->format('d/m/y à H\hi'),
-                ]
-            );
+//            $mailerService->send(
+//                $utilisateur->getUtilisateurEmail(),
+//                'Confirmation de votre compte',
+//                'register_confirmation.html.twig',
+//                [
+//                    'utilisateur' => $utilisateur,
+//                    'token' => $tokenRegistration,
+//                    'lifeTimeToken' => $utilisateur->getTokenRegistrationLifeTime()->format('d/m/y à H\hi'),
+//                ]
+//            );
 
             $this->addFlash('success', 'Votre compte a bien été créé !, Veuillez vérifier vos mails pour confirmer votre compte.');
 
@@ -76,25 +78,25 @@ class RegisterController extends AbstractController
         ]);
     }
 
-    #[Route('/verify/{token}/{id<\d+>}', name: 'account_verify', methods: ['GET'])]
-    public function verify (string $token, Utilisateur $utilisateur, EntityManagerInterface $em){
-
-        if ($utilisateur->getTokenRegistration() !== $token) {
-            throw new AccessDeniedException();
-        }
-        if ($utilisateur->getTokenRegistration() === null) {
-            throw new AccessDeniedException();
-        }
-        if (new \DateTime('now') > $utilisateur->getTokenRegistrationLifeTime()) {
-            throw new AccessDeniedException();
-        }
-
-        $utilisateur->setIsVerified(true);
-        $utilisateur->setTokenRegistration(null);
-        $em->flush();
-
-        $this->addFlash('success', 'Votre compte a bien été vérifié !');
-
-        return $this->redirectToRoute('app_login');
-    }
+//    #[Route('/verify/{token}/{id<\d+>}', name: 'account_verify', methods: ['GET'])]
+//    public function verify (string $token, Utilisateur $utilisateur, EntityManagerInterface $em){
+//
+//        if ($utilisateur->getTokenRegistration() !== $token) {
+//            throw new AccessDeniedException();
+//        }
+//        if ($utilisateur->getTokenRegistration() === null) {
+//            throw new AccessDeniedException();
+//        }
+//        if (new \DateTime('now') > $utilisateur->getTokenRegistrationLifeTime()) {
+//            throw new AccessDeniedException();
+//        }
+//
+//        $utilisateur->setIsVerified(true);
+//        $utilisateur->setTokenRegistration(null);
+//        $em->flush();
+//
+//        $this->addFlash('success', 'Votre compte a bien été vérifié !');
+//
+//        return $this->redirectToRoute('app_login');
+//    }
 }

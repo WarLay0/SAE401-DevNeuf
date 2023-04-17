@@ -56,8 +56,9 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->utilisateur_created_at = $utilisateur_created_at ?? new \DateTimeImmutable();
-        $this->isVerified = false;
+//        $this->isVerified = false;
         $this->tokenRegistrationLifeTime = (new \DateTime('now'))->add(new \DateInterval('P1D'));
+        $this->isVerified = true;
         $this->avatar = 'avatar.png';
         $this->parties = new ArrayCollection();
         $this->partieCreateur = new ArrayCollection();
