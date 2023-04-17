@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
 {
-    #[Route('/', name: 'app_accueil' , requirements:
+    #[Route('/{_locale}/accueil', name: 'app_accueil' , requirements:
 ['_locale' => 'en|fr',
 ],
 )]
