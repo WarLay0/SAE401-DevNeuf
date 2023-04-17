@@ -119,7 +119,9 @@ class CreationPartieController extends AbstractController
                 $mp->setMpTrouve(false);
                 $motPartieRepository->save($mp,true);
             }
-            
+
+            return $this->redirectToRoute('app_all_parties');
+
 
         }
 
