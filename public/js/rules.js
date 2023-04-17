@@ -2,9 +2,9 @@ $(document).ready(function(){
     const Tittle1FR = "But du jeu"
     const Tittle2FR = "Cartes Nom de Code"
     const Tittle3FR = "Cartes Clé"
-    const img1 = "images/rulesPage/RulesGoal.png"
-    const img2 = "images/rulesPage/RulesCard.png"
-    const img3 = "images/rulesPage/RulesKeyCard.png"
+    const img1 = "../images/rulesPage/RulesGoal.png"
+    const img2 = "../images/rulesPage/RulesCard.png"
+    const img3 = "../images/rulesPage/RulesKeyCard.png"
     const Text1FR = "<p>Chaque joueur connaît une partie des Noms de Code à trouver. Il va donc falloir coopérer pour" +
         " trouver l’ensemble des Noms de Code avant la fin des 9 tours. Pour cela, chacun à votre tour, vous donnez un indice pouvant désigner plusieurs Noms de Code sur la table. Votre partenaire, quant à lui, tente de deviner ces Noms de Code tout en évitant de rencontrer l’un des terribles Assassins qui vous font perdre la partie.\n" +
         "Trouvez l’ensemble des 15 Noms de Code avant la fin des 9 tours pour remporter la victoire.</p>"
@@ -29,7 +29,7 @@ $(document).ready(function(){
         "In green: the Code Names to find to win the game. ❱❱ \n" +
         "In beige: Neutral words that make you lose time. ❱❱ \n" +
         "In black: the Assassins that must not be found under any pretext!</p>"
-    if ($("#language").text() == "FR"){
+    if ($("#language").text() == "fr"){
         traductionFR()
     }else{
         traductionEN()
