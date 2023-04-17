@@ -7,13 +7,18 @@
     <h1>Statistiques</h1>
 
     <h2>Nombres de parties perdues</h2>
-    {{ dump(stats.partiesPerdues) }}
+    {{ if stats.partiesPerdues == null }}
+        oui
+    {% else %}
+        non
+    {% endif %}
 
-    <h2>Nombres de parties gagnées</h2>
-    {{ dump(stats.partiesGagnees) }}
 
-    <h2>Nombres de parties jouées</h2>
-    {{ dump(stats.partiesJouees) }}
+{#    <h2>Nombres de parties gagnées</h2>#}
+{#    {{ dump(stats.partiesGagnees) }}#}
+
+{#    <h2>Nombres de parties jouées</h2>#}
+{#    {{ dump(stats.partiesJouees) }}#}
 
     <h2>Adversaire</h2>
     {% for i in vs %}

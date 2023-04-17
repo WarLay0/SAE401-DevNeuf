@@ -6,12 +6,35 @@
 .iconBtn{
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 10px;
     .iconBtn-fg{
         display: flex;
-        justify-content: center;
         align-items: center;
         width: 187px;
         height: 60px;
+        background-color: white;
+        border-radius: 10px;
+        span{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        p{
+            @include p;
+            list-style: none;
+            text-decoration: none;
+            color: black;
+        }
+    }
+    &:hover {
+        position: relative;
+        transition: transform 100ms ease-in-out;
+        transform: translateY(-5px);
+    }
+    &:active {
+        position: relative;
+        transition: transform 50ms ease-in-out;
+        transform: translateY(-3px);
     }
 }
 
