@@ -21,7 +21,7 @@ class JoinPartieController extends AbstractController
         $partie->addJoueur($utilisateur);
         $partieRepository->save($partie, true); //sauvegarde les changements
 
-        return $this->redirect('http://127.0.0.1:5173/' . $idPartie);
+        return $this->redirect('http://mmi21g02.sae401.ovh/jeu/' . $idPartie);
 
     }
 }
