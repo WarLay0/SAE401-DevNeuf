@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="register">
-        <h1>Veuillez vous enregistrer</h1>
+        <h1>{{ 'Veuillez vous enregistrer'|trans }}</h1>
         <div >
             {{ form_start(RegisterForm) }}
             {{ form_row(RegisterForm.utilisateur_pseudo) }}

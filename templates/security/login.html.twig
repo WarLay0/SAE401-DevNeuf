@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}{{ 'Connexion'|trans }}{% endblock %}
 
 {% block body %}
     <div class="login">
         <form method="post">
             {% if app.user %}
                 <div class="mb-3">
-                    Vous êtes connecté en tant que : {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    {{'Vous êtes connecté en tant que :'|trans}} {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">{{'Déconnexion'|trans}}</a>
                 </div>
             {% endif %}
 
-            <h1 class="mb-3 font-weight-normal">Connexion</h1>
-            <h2>Ravis de vous retrouver !</h2>
-            <label for="inputUtilisateur_email">Votre adresse mail : </label>
+            <h1 class="mb-3 font-weight-normal">{{ 'Connexion'|trans }}</h1>
+            <h2>{{'Ravis de vous retrouver !'|trans}}</h2>
+            <label for="inputUtilisateur_email">{{ 'Votre adresse mail'|trans }} : </label>
             <input type="email" value="{{ last_username }}" name="utilisateur_email" id="inputUtilisateur_email" class="form-control" autocomplete="email" required autofocus>
             <br>
-            <label for="inputPassword">Password</label>
+            <label for="inputPassword">{{ 'Mot de passe'|trans }}</label>
             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
             <input type="hidden" name="_csrf_token"
@@ -35,11 +35,11 @@
             #}
 
             <button class="btn btn-lg btn-primary" type="submit">
-                S'inscrire
+                {{ 'Connexion'|trans }}
             </button>
             <br> <br>
-            <a href="{{ path('app_register') }}">Pas encore inscrit ?</a>
-            <a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
+            <a href="{{ path('app_register') }}">{{ 'Pas encore inscrit ?'|trans }}</a>
+            <a href="{{ path('app_forgot_password_request') }}">{{'Mot de passe oublié ?'|trans}}</a>
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}

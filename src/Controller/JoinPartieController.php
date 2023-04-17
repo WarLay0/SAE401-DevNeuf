@@ -10,7 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class JoinPartieController extends AbstractController
 {
-    #[Route('/join/partie', name: 'app_join_partie')]
+    #[Route('/{_locale}/join/partie', name: 'app_join_partie', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function index(Request $request, PartieRepository $partieRepository): Response
     {
         $utilisateur = $this->getUser();

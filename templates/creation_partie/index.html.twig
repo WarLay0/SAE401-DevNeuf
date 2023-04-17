@@ -3,8 +3,8 @@
 {% block title %}Nouvelle partie{% endblock %}
 
 {% block body %}
-    <h1>Création d'une partie</h1>
-    <h4>Ajouter l'adresse mail d'un autre joueur pour l'inviter dans votre partie.</h4>
+    <h1>{{'Création d\'une partie'|trans}}</h1>
+    <h4>{{ 'Ajouter l\'adresse mail d'un autre joueur pour l\'inviter dans votre partie.'|trans}}</h4>
     {% for messages in app.flashes('danger') %}
         <div class="alert alert-danger">
             {{ messages }}
@@ -13,6 +13,6 @@
 
 {{ form_start(formCreationPartie) }}
 {{ form_widget(formCreationPartie) }}
-    <button type="submit" class="btn">Créer la partie</button>
+    <button type="submit" class="btn">{{'Créer la partie'|trans}}</button>
 {{ form_end(formCreationPartie) }}
 {% endblock %}

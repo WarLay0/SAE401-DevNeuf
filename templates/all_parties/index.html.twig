@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des parties{% endblock %}
+{% block title %}{{ 'Liste des parties'|trans }}{% endblock %}
 
 {% block body %}
 
-    <h1>Liste des parties</h1>
-    <h2><a href="{{ path('app_creation_partie') }}">Nouvelle partie</a></h2>
+    <h1>{{ 'Liste des parties'|trans }}</h1>
+    <h2><a href="{{ path('app_creation_partie') }}">{{ 'Nouvelle partie'|trans }}</a></h2>
 
     <ul>
-        <h2>Listes des parties où vous êtes dedans</h2>
-        <p>Nombre de parties en cours : {{ parties|length }}</p>
+        <h2>{{'Listes des parties où vous êtes dedans'|trans}}</h2>
+        <p>{{ 'Nombre de parties en cours :'|trans }} {{ parties|length }}</p>
         {% for partie in parties %}
             <li>
                 <h3>{{ partie.nomPartie }}</h3>
-                <p>Joueurs :</p>
+                <p>{{ 'Joueurs :'|trans }}</p>
                 <ul>
                     {% for joueur in partie.joueur %}
                         <li>{{ joueur.getUtilisateurPseudo() }}</li>
@@ -21,23 +21,23 @@
                     {% endfor %}
                 </ul>
                 <div class="cont-but">
-                    <button><a href="{{ path('app_join_partie', {'id': partie.id}) }}" class="game-button">REJOINDRE</a></button>
+                    <button><a href="{{ path('app_join_partie', {'id': partie.id}) }}" class="game-button">{{ 'REJOINDRE'|trans }}</a></button>
                 </div>
             </li>
         {% endfor %}
 
-        <h2>Listes des parties où il n'y a qu'un joueur</h2>
+        <h2>{{'Listes des parties où il n\'y a qu\'un joueur'|trans}}</h2>
         {% for allPartie in allParties %}
                 <li>
                     <h3>{{ allPartie.nomPartie }}</h3>
-                    <p>Joueur :</p>
+                    <p>{{ 'Joueur :'|trans }}</p>
                     <ul>
                         {% for joueur in allPartie.joueur %}
                             <li>{{ joueur.getUtilisateurPseudo() }}</li>
                         {% endfor %}
                     </ul>
                     <div class="cont-but">
-                        <button><a href="{{ path('app_join_partie', {'id': allPartie.id}) }}" class="game-button">REJOINDRE</a></button>
+                        <button><a href="{{ path('app_join_partie', {'id': allPartie.id}) }}" class="game-button">{{ 'REJOINDRE'|trans }}</a></button>
                     </div>
                 </li>
         {% endfor %}

@@ -9,7 +9,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProfilController extends AbstractController
 {
-    #[Route('/profil', name: 'app_profil')]
+    #[Route('/{_locale}/profil', name: 'app_profil', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function RecupererUtilisateur(): Response
     {
         $utilisateur = $this->getUser();

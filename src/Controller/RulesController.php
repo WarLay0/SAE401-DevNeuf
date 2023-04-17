@@ -8,7 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RulesController extends AbstractController
 {
-    #[Route('/rules', name: 'app_rules')]
+    #[Route('/{_locale}/rules', name: 'app_rules', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function index(): Response
     {
         return $this->render('rules/index.html.twig', [

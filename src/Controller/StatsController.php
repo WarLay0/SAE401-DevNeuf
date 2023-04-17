@@ -10,7 +10,10 @@ use App\Repository\StatsRepository;
 
 class StatsController extends AbstractController
 {
-    #[Route('/stats', name: 'app_stats')]
+    #[Route('/{_locale}/stats', name: 'app_stats', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function index(StatsRepository $statsRepository, VshistoryRepository $vshistoryRepository): Response
     {
         return $this->render('stats/index.html.twig', [

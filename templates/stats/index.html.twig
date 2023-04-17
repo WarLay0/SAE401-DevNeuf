@@ -4,7 +4,7 @@
 
 {#TODO : Personnaliser le title et faire la page#}
 {% block body %}
-    <h1>Statistiques</h1>
+    <h1>{{ 'Statistiques'|trans }}</h1>
 
     <h2>Nombres de parties perdues</h2>
     {{ dump(stats.partiesPerdues) }}

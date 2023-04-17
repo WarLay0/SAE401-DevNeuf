@@ -16,7 +16,10 @@ use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 
 class RegisterController extends AbstractController
 {
-    #[Route('/inscription', name: 'app_register')]
+    #[Route('/{_locale}/inscription', name: 'app_register', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function register(Request $request,
                              UserPasswordHasherInterface $userPasswordHasher,
                              EntityManagerInterface $entityManager,

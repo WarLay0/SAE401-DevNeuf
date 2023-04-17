@@ -16,7 +16,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CreationPartieController extends AbstractController
 {
-    #[Route('/creation/partie', name: 'app_creation_partie')]
+    #[Route('/{_locale}/creation/partie', name: 'app_creation_partie', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function CreationPartie(Request $request,
                                    UtilisateurRepository $utilisateurRepository,
                                    PartieRepository $partieRepository,

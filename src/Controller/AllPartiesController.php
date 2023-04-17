@@ -11,7 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AllPartiesController extends AbstractController
 {
-    #[Route('/allparties', name: 'app_all_parties')]
+    #[Route('/{_locale}/allparties', name: 'app_all_parties', requirements:
+        ['_locale' => 'en|fr',
+        ],
+    )]
     public function AllParties(PartieRepository $partieRepository, UtilisateurRepository $utilisateurRepository): Response
     {
 
