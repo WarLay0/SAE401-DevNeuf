@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>{{'Création d\'une partie'|trans}}</h1>
-    <h4>{{ 'Ajouter l\'adresse mail d'un autre joueur pour l\'inviter dans votre partie.'|trans}}</h4>
+    <h4>{{ 'Ajouter l\'adresse mail d\'un autre joueur pour l\'inviter dans votre partie.'|trans}}</h4>
     {% for messages in app.flashes('danger') %}
         <div class="alert alert-danger">
             {{ messages }}
