@@ -188,3 +188,23 @@ a{
         width: 100%;
     }
 }
+
+//CSS de la page création partie
+
+.creation-partie {
+    display: flex;
+    flex-direction: column;
+    h1{
+        @include h1;
+    }
+    img{
+        width: 670px;
+        height: 263px;
+        margin: 0 auto;
+        margin: 42px;
+    }
+    p{
+        @include p;
+        margin: 10px;
+    }
+}
