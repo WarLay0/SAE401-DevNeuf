@@ -1,0 +1,9 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js",
+  "build/fonts/SF Pro Rounded Bold.ttf": "/build/fonts/SF Pro Rounded Bold.e6820bab.ttf",
+  "build/fonts/SF Pro Rounded.ttf": "/build/fonts/SF Pro Rounded.1eeaf133.ttf",
+  "build/fonts/Turner New.woff": "/build/fonts/Turner New.cc57384b.woff"
+}
