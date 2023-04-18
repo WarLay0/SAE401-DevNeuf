@@ -97,20 +97,21 @@
                         <div class="navbar-content-lower">
                             <div class="account-language-container">
                                 <a href="#" class="iconCta">
-                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/www.svg') }}"
-                                                                                alt=""></span>
-                                    </div>
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/www.svg') }}" alt=""></span>
                                 </a>
                                 <a href="{{ path('app_login') }}" class="iconCta">
-                                        <span class="material-symbols-rounded"><img src="{{ asset('images/ico/profile.svg') }}" alt=""></span>
+                                    <span class="material-symbols-rounded"><img src="{{ asset('images/ico/profile.svg') }}" alt=""></span>
                                 </a>
-                        </div>
+                            </div>
                         {% endif %}
-                            <button><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a></button>
-                            <button><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a></button>
+                            <div class="language-buttons-container">
+                                <button><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a></button>
+                                <button><a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a></button>
+                            </div>
                             <div class="policy-links-container">
-                            <a href="#"><span>{{ 'Conditions d\'utilisations'|trans}}</span></a>
-                            <a href="#"><span>{{'Politique de confidentialité'|trans}}</span></a>
+                                <a href="#"><span>{{ 'Conditions d\'utilisations'|trans}}</span></a>
+                                <a href="#"><span>{{'Politique de confidentialité'|trans}}</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
